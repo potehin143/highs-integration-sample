@@ -34,7 +34,7 @@ public class HighsRunnerApplication {
             double[] rl = {NEGATIVE_INFINITY, NEGATIVE_INFINITY, NEGATIVE_INFINITY};
             double[] ru = {64, 72, 20};
             int[] astart = {0, 2};
-            int[] aindex = {1, 2, 1, 2, 3};
+            int[] aindex = {0, 1, 0, 1, 2}; // starts from 0 !!!
             double[] avalue = {2, 1, 1, 3, 1};
 
             highs.invokeLpOptimization(
