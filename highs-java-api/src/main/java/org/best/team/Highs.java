@@ -30,6 +30,10 @@ public class Highs {
         return status;
     }
 
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public void setOnCompleteHandler(Consumer<Integer> onCompleteHandler) {
         this.onCompleteHandler = onCompleteHandler;
     }
