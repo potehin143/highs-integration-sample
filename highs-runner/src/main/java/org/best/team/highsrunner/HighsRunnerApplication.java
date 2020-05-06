@@ -6,6 +6,9 @@ import org.best.team.HighsStatus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import static java.lang.Double.NEGATIVE_INFINITY;
+import static java.lang.Double.POSITIVE_INFINITY;
+
 @SpringBootApplication
 public class HighsRunnerApplication {
 
@@ -22,17 +25,17 @@ public class HighsRunnerApplication {
            // statusMonitor(highs); // to test async status update from cpp code
 
             int numcol = 2;
-            int numrow = 2;
-            int nnz = 4;
+            int numrow = 3;
+            int nnz = 5;
 
-            double[] cc = {1, -2};
+            double[] cc = {-4, -6};
             double[] cl = {0, 0};
-            double[] cu = {1000, 1000};
-            double[] rl = {0,0};
-            double[] ru = {10, 10};
+            double[] cu = {POSITIVE_INFINITY, POSITIVE_INFINITY};
+            double[] rl = {NEGATIVE_INFINITY, NEGATIVE_INFINITY, NEGATIVE_INFINITY};
+            double[] ru = {64, 72, 20};
             int[] astart = {0, 2};
-            int[] aindex = {0, 1, 0, 1};
-            double[] avalue = {1, -1, 3, 0.2};
+            int[] aindex = {1, 2, 1, 2, 3};
+            double[] avalue = {2, 1, 1, 3, 1};
 
             highs.invokeLpOptimization(
                    numcol, numrow, nnz,
